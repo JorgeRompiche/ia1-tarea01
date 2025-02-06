@@ -20,10 +20,10 @@ function test(states) {
     visited_states.add(state_key);
 
     document.getElementById("log")
-        .innerHTML += "<br>Location: ".concat(location)
-            .concat(" | State A: ").concat(states[1])
-            .concat(" | State B: ").concat(states[2])
-            .concat(" => Action: ").concat(action_result)
+        .innerHTML += "<br>[ ".concat(location)
+            .concat(" | ").concat(states[1])
+            .concat(" | ").concat(states[2])
+            .concat(" ] => Action: ").concat(action_result)
         ;
 
     if (action_result == "CLEAN") {
@@ -42,7 +42,7 @@ function test(states) {
     ensuciar(states);
 
     if (visited_states.size >= 8) {
-        document.getElementById("log").innerHTML += "<br>Se han visitado los 8 estados.".concat(visited_states);
+        document.getElementById("log").innerHTML += "<br>Se han visitado los 8 estados.";
         document.getElementById("log").innerHTML += "<br>" + Array.from(visited_states).join(", ");
         return;
     }
